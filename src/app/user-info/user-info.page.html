@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>User Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img class="profile-picture" src="assets/images/ph.jpg" alt="Profile Picture" ></ion-img>
+    <ion-card-header>
+     
+      <ion-card-title>{{ user.name }}</ion-card-title>
+      <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Phone:</strong> {{ user.phone }}</p>
+      <p><strong>Address:</strong> {{ user.address }}</p>
+      <p><strong>Role:</strong> {{ user.role }}</p>
+      <p><strong>Joined:</strong> {{ user.joinedDate }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,69 @@
+/* General styles for the page */
+ion-content {
+  --background: #f5c1c1; /* Dark background for the content area */
+  color: #ffffff; /* White text for good contrast */
+}
+
+/* Profile Picture Styling */
+ ion-img::part(image){
+
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+ margin: 20px auto;
+  display: block;
+  border: 2px solid #ffffff; /* Clean white border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  
+  object-fit: cover;
+}
+
+/* Card styling */
+ion-card {
+  background: #4a8394; /* Slightly lighter card background */
+  color: #ffffff; /* Ensure text is white for readability */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Card shadow for elevated look */
+  margin: 20px;
+  padding: 15px;
+  object-fit: cover;
+
+}
+
+/* Card title */
+ion-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Card subtitle (email) */
+ion-card-subtitle {
+  font-size: 0.9rem;
+  color: #bdbdbd; /* Light gray for a secondary text look */
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Card content */
+ion-card-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+ion-card-content p strong {
+  color: #e0e0e0; /* Slightly lighter color for labels */
+}
+
+/* Back button styling */
+ion-back-button {
+  color: #ffffff; /* Make the back button white to match the theme */
+  --background: transparent;
+}
+
+ion-toolbar {
+  --background: #fba7a7; /* Matches the card background for consistency */
+  border-bottom: 1px solid #28516d; /* Adds a subtle bottom border */
+}

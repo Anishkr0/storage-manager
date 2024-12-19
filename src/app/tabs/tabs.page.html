@@ -1,20 +1,268 @@
-<ion-tabs>
+<!-- header -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="apps" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="btn1">
+      <ion-button class="bordered" fill="clear" color="light" (click)="toggleSearch()">
+        <ion-icon color="primary" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar *ngIf="isSearchVisible" [(ngModel)]="searchTerm" (ionInput)="onSearchChange($event)"></ion-searchbar>
+  </ion-toolbar>
 
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1" href="/tabs/tab1">
-      <ion-icon aria-hidden="true" name="triangle"></ion-icon>
-      <ion-label>Tab 1</ion-label>
-    </ion-tab-button>
+  <ion-item lines="none" button (click)="goToUserInfo()">
+    <ion-avatar slot="start">
+      <img src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg">
+    </ion-avatar>
+    <ion-label>
+      <p>Hello,</p>
+      <h3>Anish Kumar</h3>
+    </ion-label>
 
-    <ion-tab-button tab="tab2" href="/tabs/tab2">
-      <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
-      <ion-label>Tab 2</ion-label>
-    </ion-tab-button>
+  </ion-item>
 
-    <ion-tab-button tab="tab3" href="/tabs/tab3">
-      <ion-icon aria-hidden="true" name="square"></ion-icon>
-      <ion-label>Tab 3</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
+</ion-header>
+<!-- //pngs// -->
+<ion-content>
+  <div class="slides ion-margin-bottom">
+    <ion-card>
+      <ion-card-header>
+        <div class="main">
+          <img src="https://cfl.dropboxstatic.com/static/images/logo_catalog/twitter-card-glyph_m1%402x.png">
+        </div>
 
-</ion-tabs>
+        <img class="files" src="https://i.ibb.co/jD8ypLq/files.jpg" style="width: 400px;">
+      </ion-card-header>
+      <ion-card-content class="ion-text-left">
+        <ion-card-title class="ion-margin-bottom">Dropbox</ion-card-title>
+        <ion-card-subtitle class="ion-text-right">10/50GB</ion-card-subtitle>
+        <ion-progress-bar value="0.5" color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <div class="main">
+          <img src="https://www.freeiconspng.com/uploads/google-drive-icon-18.png">
+        </div>
+        <img class="files" src="https://i.ibb.co/jD8ypLq/files.jpg" style="width: 400px;">
+      </ion-card-header>
+      <ion-card-content class="ion-text-left">
+        <ion-card-title class="ion-margin-bottom">Google Drive</ion-card-title>
+        <ion-card-subtitle class="ion-text-right">10/50GB</ion-card-subtitle>
+        <ion-progress-bar value="0.4" color="warning"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <!-- </ion-slide>
+
+    </ion-slides> -->
+  </div>
+  <!-- .............Document.......... -->
+  <div class="container">
+    <h2>Last File</h2>
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="document"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>STUDY.PDF</h4>
+              <h6>Google Drive/Docs</h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="film"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>PROJECT.PDF</h4>
+              <h6>Dropbox/Videos</h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="document"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>LPU.PDF</h4>
+              <h6>Google Drive/Docs</h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="film"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>IONIC PROJECT</h4>
+              <h6>Icon</h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </div>
+  <hr>
+  <!-- ................4 cards............ -->
+
+  <div class="container">
+    <div class="container-folder">
+      <ion-item lines="none">
+        <ion-grid>
+          <ion-row class=" ion-align-items-center" id="card-5">
+            <ion-col size="6">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="image"></ion-icon>
+                <!-- <span>menu</span> -->
+                <a href="/tab1" class="ANSH">Images</a>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-grid>
+          <ion-row class="ion-align-items-center" id="card-8">
+            <ion-col size="6">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="videocam"></ion-icon>
+                <a href="/tab1" class="ANSH">Videos</a>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    </div>
+    <hr>
+
+
+    <div class="container-folders">
+      <ion-item lines="none">
+        <ion-grid>
+          <ion-row class=" ion-align-items-center" id="card-8">
+            <ion-col size="6">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="download"> </ion-icon>
+                <!-- <span>Download</span> -->
+                <a href="/tab3" class="ANSH">downloads</a>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-grid>
+          <ion-row class="ion-align-items-center" id="card-8">
+            <ion-col size="6">
+              <ion-button color="light" fill="clear">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                <a href="/trash" class="ANSH">trash</a>
+
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    </div>
+    <!-- .................. Storage.............. -->
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2">
+        <ion-button color="light" fill="clear">
+          <ion-icon slot="icon-only" name="download"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="7">
+        <ion-label>
+          <h4>Videos</h4>
+          <ion-card-subtitle class="ion-text-right">12/50GB free</ion-card-subtitle>
+          <ion-progress-bar value="0.3" color="danger"></ion-progress-bar>
+        </ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button color="light" fill="clear">
+          <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2">
+        <ion-button color="light" fill="clear">
+          <ion-icon slot="icon-only" name="folder"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="7">
+        <ion-label>
+          <h4>All Storage</h4>
+          <ion-card-subtitle class="ion-text-right">37/50GB free</ion-card-subtitle>
+          <ion-progress-bar value="0.7" color="warning"></ion-progress-bar>
+        </ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button color="light" fill="clear">
+          <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>
